@@ -39,10 +39,5 @@ module Postal
     config.logger = Postal.logger_for(:rails)
 
     config.hosts << Postal.config.web.host
-
-    # Add all track domains to the list of allowed hosts
-    for track_domain in TrackDomain.all
-      config.hosts << track_domain.full_name
-    end
   end
 end
