@@ -15,6 +15,7 @@ class TrackDomainsController < ApplicationController
   def create
     @track_domain = @server.track_domains.build(params.require(:track_domain).permit(:name, :domain_id, :track_loads, :track_clicks, :excluded_click_domains, :ssl_enabled))
     if @track_domain.save
+      Rails.application.config.hosts << @track_domain.full_name
       redirect_to_with_json [:return_to, [organization, @server, :track_domains]]
     else
       render_form_errors "new", @track_domain
@@ -31,6 +32,7 @@ class TrackDomainsController < ApplicationController
 
   def destroy
     @track_domain.destroy
+    Rails.application.config.hosts.delete(@track_domain.full_name)
     redirect_to_with_json [organization, @server, :track_domains]
   end
 

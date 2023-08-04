@@ -40,9 +40,9 @@ module Postal
 
     config.hosts << Postal.config.web.host
 
-    # fix: add tracking domains to config.hosts
-    Postal.config.web.tracking_domains&.each do | tracking_domain |
-      config.hosts << tracking_domain
+    # Add all track domains to the list of allowed hosts
+    for track_domain in TrackDomain.all
+      config.hosts << track_domain.full_name
     end
   end
 end
