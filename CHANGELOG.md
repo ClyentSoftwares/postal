@@ -2,6 +2,14 @@
 
 This file contains all the latest changes and updates to Postal.
 
+## [2.4.1](https://github.com/ClyentSoftwares/postal/compare/2.4.0...2.4.1) (2023-08-04)
+
+
+### Bug Fixes
+
+* remove invalid tracking domain code from application ([c68f0b8](https://github.com/ClyentSoftwares/postal/commit/c68f0b85d76ba1ef4c2ad2f2fa56064c8b2e463f))
+* tracking domains allowed host ([e38749c](https://github.com/ClyentSoftwares/postal/commit/e38749c5774b3ffff19e9906ffbb4c15dcd6092a))
+
 ## [2.4.0](https://github.com/ClyentSoftwares/postal/compare/2.3.0...2.4.0) (2023-08-04)
 
 
