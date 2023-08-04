@@ -2,6 +2,13 @@
 
 This file contains all the latest changes and updates to Postal.
 
+## [2.3.0](https://github.com/ClyentSoftwares/postal/compare/2.2.0...2.3.0) (2023-08-04)
+
+
+### Features
+
+* use gh actions cache ([8bb4808](https://github.com/ClyentSoftwares/postal/commit/8bb48081edbb8bfa32b11787166326267281054e))
+
 ## [2.2.0](https://github.com/ClyentSoftwares/postal/compare/v2.1.4...2.2.0) (2023-08-04)
 
 
