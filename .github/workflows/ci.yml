@@ -106,8 +106,8 @@ jobs:
           tags: |
             ghcr.io/clyentsoftwares/postal:stable
             ghcr.io/clyentsoftwares/postal:${{ needs.release-please.outputs.version }}
-          cache-from: type=local,src=/cache/krystal-identity
-          cache-to: type=local,dest=/cache/krystal-identity,mode=max
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
           target: full
           build-args: |
             VERSION=${{ needs.release-please.outputs.version }}
