@@ -175,7 +175,12 @@ class OutgoingMessagePrototype
           content: attachment[:data]
         }
       end
-      mail.header["Received"] = "from #{@source_type} (#{resolved_hostname} [#{@ip}]) by Postal with HTTP; #{Time.now.utc.rfc2822}"
+
+      # feat: check if we should strip received headers
+      unless Postal.config.smtp_server.strip_received_headers?
+        mail.header["Received"] = "from #{@source_type} (#{resolved_hostname} [#{@ip}]) by Postal with HTTP; #{Time.now.utc.rfc2822}"
+      end
+
       mail.message_id = "<#{@message_id}>"
       mail.to_s
     end
