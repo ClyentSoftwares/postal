@@ -2,6 +2,22 @@
 
 This file contains all the latest changes and updates to Postal.
 
+## [2.2.0](https://github.com/ClyentSoftwares/postal/compare/v2.1.4...2.2.0) (2023-08-04)
+
+
+### Features
+
+* allow all domains ([d5db160](https://github.com/ClyentSoftwares/postal/commit/d5db160a34c118e913c70640d7b29a75e8ece465))
+* check for strip received header on http api ([c03c45f](https://github.com/ClyentSoftwares/postal/commit/c03c45f8c09c8bd018d4770a89abefc97e0b5917))
+* update ci workflow for arm64 ([94ff9c2](https://github.com/ClyentSoftwares/postal/commit/94ff9c2614359d414593dcbf549d97cad6333eb9))
+
+
+### Bug Fixes
+
+* duplicate string before modifying it to prevent frozen string errors ([f0a8aca](https://github.com/ClyentSoftwares/postal/commit/f0a8aca6e10064fb16daefff9e22dcc20a831868))
+* fixed typo (rfc number) ([2f62baa](https://github.com/ClyentSoftwares/postal/commit/2f62baa238fc1102706ee4acf079b7a876b05283))
+* match IPv4 mapped IPv6 addresses when searching for SMTP-IP credentials ([8b525d0](https://github.com/ClyentSoftwares/postal/commit/8b525d0381a9e0113af808b9ec2eb47bf78ec60b))
+
 ## 2.1.4
 
 ### Bug Fixes
