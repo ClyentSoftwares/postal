@@ -2,6 +2,14 @@
 
 This file contains all the latest changes and updates to Postal.
 
+## [2.4.0](https://github.com/ClyentSoftwares/postal/compare/2.3.0...2.4.0) (2023-08-04)
+
+
+### Features
+
+* add amd64 to ci release ([a0f9ec1](https://github.com/ClyentSoftwares/postal/commit/a0f9ec15fd2bb765814bdf340ac26243f04e0075))
+* use arm x64 on builds ([0bcd451](https://github.com/ClyentSoftwares/postal/commit/0bcd45181ddf9d9b5e774976682ccf4c141ff3c2))
+
 ## [2.3.0](https://github.com/ClyentSoftwares/postal/compare/2.2.0...2.3.0) (2023-08-04)
 
 
