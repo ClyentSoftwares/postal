@@ -34,6 +34,9 @@ class TrackDomain < ApplicationRecord
   scope :ok, -> { where(dns_status: "OK") }
 
   after_create :check_dns, unless: :dns_status
+  
+  after_create :add_application_host
+  after_destroy :remove_application_host
 
   before_validation do
     self.server = domain.server if domain && server.nil?
@@ -67,6 +70,14 @@ class TrackDomain < ApplicationRecord
     self.dns_checked_at = Time.now
     save!
     dns_ok?
+  end
+
+  def add_application_host
+    Rails.application.config.hosts << full_name
+  end
+
+  def remove_application_host
+    Rails.application.config.hosts.delete(full_name)
   end
 
   def use_ssl?
