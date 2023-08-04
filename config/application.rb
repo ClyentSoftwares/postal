@@ -38,7 +38,7 @@ module Postal
 
     config.logger = Postal.logger_for(:rails)
 
-    config.hosts << Postal.config.web.host
-
+    #config.hosts << Postal.config.web.host
+    config.hosts.clear
   end
 end
