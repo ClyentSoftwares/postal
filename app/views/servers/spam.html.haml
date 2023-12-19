@@ -36,5 +36,16 @@
           caught as spam by other providers. Messages that score higher than the threshold set by us will
           not be passed through. If this limit needs adjusting, contact us for assistance.
           %b The threshold for this server is currently #{@server.outbound_spam_threshold}.
+    
+    .u-margin
+      %p.pageContent__subTitle Add Spam Headers
+      %p.pageContent__text
+        If you'd like to add headers to messages which indicate the spam score, you can do so here.
+        This can be useful for debugging or for use with other services.
+
+        .fieldSet__field
+          = f.label :log_smtp_data, "Add Spam Headers?", :class => 'fieldSet__label'
+          .fieldSet__input
+            = f.select :log_smtp_data, [["No", false], ["Yes ", true]], {}, :class => 'input input--select'
 
     %p= f.submit "Save Spam Thresholds", :class => "button button--positive js-form-submit"

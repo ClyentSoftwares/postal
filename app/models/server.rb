@@ -24,6 +24,7 @@
 #  send_limit_exceeded_notified_at    :datetime
 #  spam_threshold                     :decimal(8, 2)
 #  spam_failure_threshold             :decimal(8, 2)
+#  add_spam_headers                   :boolean          default(TRUE)
 #  postmaster_address                 :string(255)
 #  suspended_at                       :datetime
 #  outbound_spam_threshold            :decimal(8, 2)
@@ -71,6 +72,7 @@ class Server < ApplicationRecord
   default_value :message_retention_days, -> { 60 }
   default_value :spam_threshold, -> { Postal.config.general.default_spam_threshold }
   default_value :spam_failure_threshold, -> { Postal.config.general.default_spam_failure_threshold }
+  default_value :add_spam_headers, -> { true }
 
   validates :name, presence: true, uniqueness: { scope: :organization_id, case_sensitive: false }
   validates :mode, inclusion: { in: MODES }
