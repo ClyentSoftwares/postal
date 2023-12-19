@@ -2,6 +2,52 @@
 
 This file contains all the latest changes and updates to Postal.
 
+## [2.3.0](https://github.com/ClyentSoftwares/postal/compare/2.2.0...2.3.0) (2023-12-19)
+
+
+### Features
+
+* add priorities to IP address assignment ([21a8d89](https://github.com/ClyentSoftwares/postal/commit/21a8d890459958375d4a49a5b7f31f4900a9e8b1))
+* allow @ and % in webhook urls ([c60c69d](https://github.com/ClyentSoftwares/postal/commit/c60c69db1800775776da4c28c68001f230fe5888))
+* allow all domains ([d5db160](https://github.com/ClyentSoftwares/postal/commit/d5db160a34c118e913c70640d7b29a75e8ece465))
+* check for strip received header on http api ([c03c45f](https://github.com/ClyentSoftwares/postal/commit/c03c45f8c09c8bd018d4770a89abefc97e0b5917))
+* **config:** support for loading a postal.local.yml config file from the config root if it exists ([8e3294b](https://github.com/ClyentSoftwares/postal/commit/8e3294ba1af4b797d36bd1ca9226190ed80f65cc))
+* configurable spam headers ([134532b](https://github.com/ClyentSoftwares/postal/commit/134532b5bf896df4f053f41e22219e737b304535))
+* **smtp_server:** allow bind address to be configured ([4a410c8](https://github.com/ClyentSoftwares/postal/commit/4a410c8c9f6fa1ef993a68c37afeaf31230585f7)), closes [#1166](https://github.com/ClyentSoftwares/postal/issues/1166)
+* support for AMQPS for rabbitmq connections ([#1911](https://github.com/ClyentSoftwares/postal/issues/1911)) ([9f0697f](https://github.com/ClyentSoftwares/postal/commit/9f0697f194209f5fae5e451ba8fb888413fe37fa))
+* support for configuring the default spam threshold values for new servers ([724325a](https://github.com/ClyentSoftwares/postal/commit/724325a1b97d61ef1e134240e4f70aaad39dbf98))
+* support for using rspamd for spam filtering ([a1277ba](https://github.com/ClyentSoftwares/postal/commit/a1277baba56ea6d6b4da4bba87b00cd3dbf0305e))
+* **ui:** add footer with links to docs and discussions ([1247dae](https://github.com/ClyentSoftwares/postal/commit/1247dae2e060a695a13a30ba072ca5e6dea45202))
+* update ci workflow for arm64 ([94ff9c2](https://github.com/ClyentSoftwares/postal/commit/94ff9c2614359d414593dcbf549d97cad6333eb9))
+
+
+### Bug Fixes
+
+* add resolv 0.2.1 ([eef1a36](https://github.com/ClyentSoftwares/postal/commit/eef1a365a28e133750c4d5a4ac0eeeed223e303d)), closes [#1381](https://github.com/ClyentSoftwares/postal/issues/1381) [#1377](https://github.com/ClyentSoftwares/postal/issues/1377)
+* always obey POSTAL_CONFIG_ROOT ([1d22ca0](https://github.com/ClyentSoftwares/postal/commit/1d22ca0f85b58b04aedde9071d9fc5ecd44af4de))
+* **dkim:** ensure DKIM-Signature headers are appropriately wrapped ([476129c](https://github.com/ClyentSoftwares/postal/commit/476129cc1ba44e9014768d5ba7193587f78cb5d5)), closes [#339](https://github.com/ClyentSoftwares/postal/issues/339)
+* **dkim:** fixes bug with signing dkim bodies ([189dfa5](https://github.com/ClyentSoftwares/postal/commit/189dfa509b4750f1e4cc6f43f6565edd3a35139c))
+* **dkim:** fixes timing race condition when signing emails ([232b605](https://github.com/ClyentSoftwares/postal/commit/232b605f5bb8ab61156e1fb9860705fed017ed41)), closes [#1652](https://github.com/ClyentSoftwares/postal/issues/1652)
+* do not change \r to \r\n ([#2154](https://github.com/ClyentSoftwares/postal/issues/2154)) ([9f4ef8f](https://github.com/ClyentSoftwares/postal/commit/9f4ef8f57a839c5529b4f00a36b832740386b4ed)), closes [#1624](https://github.com/ClyentSoftwares/postal/issues/1624)
+* **docker:** fixes issue caused by changes to underlying ruby:2.6 image ([6570ff1](https://github.com/ClyentSoftwares/postal/commit/6570ff1f7797ff9a307dd96ed4ff37be14bf79ab))
+* **docs:** update port numbers to specify the actual port number the SMTP server is listening on ([4404b3e](https://github.com/ClyentSoftwares/postal/commit/4404b3e02c1722808157c3f590310ead9e28641d))
+* duplicate string before modifying it to prevent frozen string errors ([f0a8aca](https://github.com/ClyentSoftwares/postal/commit/f0a8aca6e10064fb16daefff9e22dcc20a831868))
+* fix issue with determining if an SMTP connection is encrypted or not ([#1338](https://github.com/ClyentSoftwares/postal/issues/1338)) ([73870d6](https://github.com/ClyentSoftwares/postal/commit/73870d6a92400fc8ec1493016817dfac074ffd06))
+* fixed typo (rfc number) ([2f62baa](https://github.com/ClyentSoftwares/postal/commit/2f62baa238fc1102706ee4acf079b7a876b05283))
+* fixes broken styling on errors ([a0c87e7](https://github.com/ClyentSoftwares/postal/commit/a0c87e7bf16a19f06c13797e3329a4fed91370a1))
+* **logging:** fix spelling of graylog ([2a11e0c](https://github.com/ClyentSoftwares/postal/commit/2a11e0c0a5b7c7f630af28cf4af5511d9bce6dda))
+* match IPv4 mapped IPv6 addresses when searching for SMTP-IP credentials ([8b525d0](https://github.com/ClyentSoftwares/postal/commit/8b525d0381a9e0113af808b9ec2eb47bf78ec60b))
+* Move RubyVer functionality to Utilities module ([5998bf3](https://github.com/ClyentSoftwares/postal/commit/5998bf376a274df19f29877e7f68ea75f298c9f9))
+* remove a few leftover fast server artifacts ([5cd06e1](https://github.com/ClyentSoftwares/postal/commit/5cd06e126b6caac502245754b360194365152415))
+* remove weird scrollbars ([#2391](https://github.com/ClyentSoftwares/postal/issues/2391)) ([b22f1bd](https://github.com/ClyentSoftwares/postal/commit/b22f1bdb2e2d66b096ca993d6a5f4f708274a4a2))
+* replace Fixnum with Integer ([52a23fa](https://github.com/ClyentSoftwares/postal/commit/52a23fa86f94c14dfc7edccbf414dda34c46bc12)), closes [#996](https://github.com/ClyentSoftwares/postal/issues/996)
+* retry connections without SSL when SSL issue is encountered during smtp sending ([0dc6824](https://github.com/ClyentSoftwares/postal/commit/0dc6824a8f0315ea42b08f7e6812b821b62489c9))
+* **smtp_server:** attempt to redact plain-text passwords from log output ([fcb6361](https://github.com/ClyentSoftwares/postal/commit/fcb63616e1ce578d7d4fd1c96ddc4ee0f7a71534))
+* **smtp_server:** fixes issue with malformed rcpt to ([e0ba05a](https://github.com/ClyentSoftwares/postal/commit/e0ba05acb11108d98a460ae3fac653ceefb5f672)), closes [#1299](https://github.com/ClyentSoftwares/postal/issues/1299) [#1019](https://github.com/ClyentSoftwares/postal/issues/1019)
+* **smtp_server:** refactor mx lookups to randomly order mx records with the same priority ([bc22394](https://github.com/ClyentSoftwares/postal/commit/bc22394fdd4f26dddd576840b49d7c25802cda7d)), closes [#1408](https://github.com/ClyentSoftwares/postal/issues/1408) [#1405](https://github.com/ClyentSoftwares/postal/issues/1405)
+* **smtp_server:** updated line split logic, normalize all linebreaks to \r\n ([#897](https://github.com/ClyentSoftwares/postal/issues/897)) ([e8ba9ee](https://github.com/ClyentSoftwares/postal/commit/e8ba9ee4276e81af84ecb6ff6f0c024ef99f6ddc))
+* use the Postal logger system for the rails log ([5b04fac](https://github.com/ClyentSoftwares/postal/commit/5b04faca39c69757bd7d695b82984f8b4a41cac3))
+
 ## [2.2.0](https://github.com/ClyentSoftwares/postal/compare/v2.1.4...2.2.0) (2023-08-04)
 
 
